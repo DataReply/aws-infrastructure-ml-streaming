@@ -1,5 +1,6 @@
 #### Tooling
 ```bash
+brew install fluxcd/tap/flux
 brew install tfenv jq awscli
 tfenv install 0.15.1
 tfenv use 0.15.1
@@ -7,23 +8,29 @@ tfenv use 0.15.1
 chmod +x ./bin/*.sh
 ```
 
-### Configure AWS ACCESS
+#### Configure AWS ACCESS
+
+Ensure you have an aws profile configured that is named datareply.
 
 #### Apply state
 
-1. First apply
-2. -target=module.vpc
+```
+cd env/dev/k3s
+terragrunt apply
+```
 
 ####  kubectl locally
 
-Once
+#### One-time config
 1. start ssession to master node
 
 `gossm start -p datareply`
 
 2. copy kubeconfig from `cat /etc/rancher/k3s/k3s.yaml`  and store locally.
 
+(can also be shared among team members)
 
+#### Connecting to the cluster
 
 1. Use this kubeconfig `export KUBECONFIG="$(pwd)/k3s.yaml"`
 2. create tunnel
@@ -36,6 +43,8 @@ aws ssm start-session --profile datareply --region eu-central-1  \
 ```
 
 ### bootstrap flux
+
+This  only needs to be done once, it connects the app config layer with flux:
 
 ```
 export GITHUB_USER="TODO REPLACE BY TOKEN"
@@ -51,7 +60,5 @@ flux bootstrap github \
 #### Tools/Frameworks planned to used
 
 - https://github.com/dflook/terraform-github-actions
-
 - https://github.com/fluxcd/flux2-kustomize-helm-example/tree/main/apps
-
 - https://github.com/sagittaros/terraform-k3s-private-cloud
