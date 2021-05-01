@@ -1,4 +1,8 @@
-### Tooling
+# aws-infrastructure-ml-streaming
+
+This repository defines aws infrastructure required to operate the ml-streaming showcase.
+
+### Required tooling
 ```bash
 brew install fluxcd/tap/flux
 brew install tfenv jq awscli
