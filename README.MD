@@ -42,7 +42,7 @@ export GITHUB_USER="TODO REPLACE BY TOKEN"
 flux bootstrap github \
     --owner=DataReply \
     --repository=app-configuration-layer-ml-streaming \
-    --branch=main \
+    --branch=master \
     --kubeconfig k3s.yaml \
     --context=default \
     --path=clusters/dev
