@@ -1,4 +1,4 @@
-#### Tooling
+### Tooling
 ```bash
 brew install fluxcd/tap/flux
 brew install tfenv jq awscli
@@ -8,39 +8,38 @@ tfenv use 0.15.1
 chmod +x ./bin/*.sh
 ```
 
-#### Configure AWS ACCESS
+### Configure AWS Access
 
 Ensure you have an aws profile configured that is named datareply.
 
-#### Apply state
+### Apply state
 
 ```
 cd env/dev/k3s
 terragrunt apply
 ```
 
-####  kubectl locally
+###  kubectl locally
+
+This section explains which steps need to be done to run kubectl towards the cluster locally.
 
 #### One-time config
 1. start ssession to master node
-
 `gossm start -p datareply`
-
 2. copy kubeconfig from `cat /etc/rancher/k3s/k3s.yaml`  and store locally.
-
 (can also be shared among team members)
 
 #### Connecting to the cluster
 
 1. Use this kubeconfig `export KUBECONFIG="$(pwd)/k3s.yaml"`
-2. create tunnel
-   
+2. Create tunnel: 
 ```
 aws ssm start-session --profile datareply --region eu-central-1  \
     --target i-0b078c18de2075b0d  \
     --document-name AWS-StartPortForwardingSession \
     --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}'
 ```
+3. Use kubectl as usual
 
 ### bootstrap flux
 
