@@ -25,25 +25,28 @@ Once
 
 
 
-1. Use this kubeconfig `export KUBECONFIG="$(pwd)/k3s.yaml`
+1. Use this kubeconfig `export KUBECONFIG="$(pwd)/k3s.yaml"`
 2. create tunnel
    
 ```
-aws ssm start-session --profile datareply --region eu-central-1  \                    SIG(125) ↵  ⚙  11374  17:26:00
-    --target i-0297a003b50836844 \
+aws ssm start-session --profile datareply --region eu-central-1  \
+    --target i-0b078c18de2075b0d  \
     --document-name AWS-StartPortForwardingSession \
-    --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}
+    --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}'
 ```
 
 ### bootstrap flux
 
+```
+export GITHUB_USER="TODO REPLACE BY TOKEN"
 flux bootstrap github \
-    --context=staging \
-    --owner=${GITHUB_USER} \
-    --repository=${GITHUB_REPO} \
+    --owner=DataReply \
+    --repository=app-configuration-layer-ml-streaming \
     --branch=main \
-    --personal \
-    --path=clusters/staging
+    --kubeconfig k3s.yaml \
+    --context=default \
+    --path=clusters/dev
+```
 
 #### Tools/Frameworks planned to used
 

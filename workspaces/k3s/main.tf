@@ -58,4 +58,3 @@ module "k3s-in-new-vpc" {
   # node_instance_type   = "r6g.medium"
 }
 
-
