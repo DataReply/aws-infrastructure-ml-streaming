@@ -5,3 +5,5 @@ aws ssm start-session --profile datareply  \
     --target $INSTANCE_ID  \
     --document-name AWS-StartPortForwardingSession \
     --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}'
+export KUBECONFIG=$(PWD)/k3s.yaml
+k get nodes

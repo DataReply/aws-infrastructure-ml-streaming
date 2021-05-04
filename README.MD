@@ -21,6 +21,21 @@ https://github.com/gruntwork-io/terragrunt/issues/580
 
 Ensure you have an aws profile configured that is named `datareply`.
 
+We do not yet use role assumption for the use case, thus the only thing declared in `~/.aws/config` for the `datareply` profile ist:
+
+```
+[profile datareply]
+region = eu-central-1
+```
+
+Make additionally sure to have set proper access credentials in `~/.aws/credentials` :
+
+```
+[datareply]
+aws_access_key_id = YOU_ACCCESS_KEY_ID
+aws_secret_access_key = theRespectivEAccessKey
+```
+
 
 ### Apply state locally
 The terraform will pickup the profile called `datareply` and will assume you have sufficient privleges to apply the infrastructure spec.
@@ -35,10 +50,12 @@ terragrunt apply
 This section explains which steps need to be done to run kubectl towards the cluster locally.
 
 #### One-time config
+You need to set this up once to get a local copy of the kubeconfig.
+
 1. Run the bundled `bash bootstrap.sh`
 
-
 #### Connecting to the cluster
+You need to run this, if you are planning to connect to the cluster via kubectl.
 
 1. Run the bundled `bash connect.sh`
 2. Use kubectl as usual
