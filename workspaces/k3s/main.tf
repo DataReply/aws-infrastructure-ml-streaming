@@ -26,7 +26,7 @@ module "vpc" {
   enable_nat_gateway = true
   single_nat_gateway = true # perhaps you got money to burn?
 
-  tags = var.tags
+  #tags = var.tags
 }
 
 # ----------------------------------------------
