@@ -60,9 +60,8 @@ You need to run this, if you are planning to connect to the cluster via kubectl.
 1. Run the bundled `bash connect.sh`
 2. Use kubectl as usual
 
-### bootstrap flux
-
-This  only needs to be done once, it connects the app config layer with flux:
+### bootstrap flux 
+This  only needs to be done *once by the cluster admin* in order to bootstrap flux on the cluster and connect the `app-configuration-layer-ml-streaming` with it.
 
 ```
 export GITHUB_USER="TODO REPLACE BY TOKEN"
