@@ -8,12 +8,10 @@ This repository defines aws infrastructure required to operate the ml-streaming 
 - aws cli session manager plugin https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
 
 ```bash
-brew install fluxcd/tap/flux
-brew install tfenv jq awscli
+brew tap gjbae1212/gossm
+brew install gossm terragrunt tfenv jq awscli fluxcd/tap/flux
 tfenv install 0.15.1
 tfenv use 0.15.1
-
-chmod +x ./bin/*.sh
 ```
 
 ### Configure AWS Access
