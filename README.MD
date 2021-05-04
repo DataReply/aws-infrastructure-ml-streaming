@@ -16,7 +16,8 @@ tfenv use 0.15.1
 
 ### Configure AWS Access
 
-Ensure you have an aws profile configured that is named datareply.
+Ensure you have an aws profile configured that is named `datareply`.
+
 
 ### Apply state
 
@@ -37,15 +38,9 @@ This section explains which steps need to be done to run kubectl towards the clu
 
 #### Connecting to the cluster
 
-1. Use this kubeconfig `export KUBECONFIG="$(pwd)/k3s.yaml"`
-2. Create tunnel: 
-```
-aws ssm start-session --profile datareply --region eu-central-1  \
-    --target i-0b078c18de2075b0d  \
-    --document-name AWS-StartPortForwardingSession \
-    --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}'
-```
-3. Use kubectl as usual
+1. Run the bundled `bash connect.sh`
+
+2. Use kubectl as usual
 
 ### bootstrap flux
 
