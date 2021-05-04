@@ -22,7 +22,9 @@ https://github.com/gruntwork-io/terragrunt/issues/580
 Ensure you have an aws profile configured that is named `datareply`.
 
 
-### Apply state
+### Apply state locally
+The terraform will pickup the profile called `datareply` and will assume you have sufficient privleges to apply the infrastructure spec.
+This repository will soon have an automated CD pipeline which will make this partly redundant.
 
 ```
 cd env/dev/k3s
@@ -30,19 +32,15 @@ terragrunt apply
 ```
 
 ###  kubectl locally
-
 This section explains which steps need to be done to run kubectl towards the cluster locally.
 
 #### One-time config
-1. start ssession to master node
-`gossm start -p datareply`
-2. copy kubeconfig from `cat /etc/rancher/k3s/k3s.yaml`  and store locally.
-(can also be shared among team members)
+1. Run the bundled `bash bootstrap.sh`
+
 
 #### Connecting to the cluster
 
 1. Run the bundled `bash connect.sh`
-
 2. Use kubectl as usual
 
 ### bootstrap flux
