@@ -48,7 +48,7 @@ module "k3s-in-new-vpc" {
 
   # node instances
   master_instance_type = var.master_instance_type 
-  node_count           = 3
+  node_count           = 5
   node_instance_arch   = "x86_64"
   node_instance_types  = ["t3a.small", "t3.small"]
   on_demand_percentage = 0 # all spot instances

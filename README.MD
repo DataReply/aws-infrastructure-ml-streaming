@@ -3,6 +3,10 @@
 This repository defines aws infrastructure required to operate the ml-streaming showcase.
 
 ### Required tooling
+
+- aws cli https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html
+- aws cli session manager plugin https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+
 ```bash
 brew install fluxcd/tap/flux
 brew install tfenv jq awscli
