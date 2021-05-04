@@ -14,6 +14,9 @@ tfenv install 0.15.1
 tfenv use 0.15.1
 ```
 
+You might run into issues because both `terragrunt` and `tfenv` depend on terraform. Some solutions to this are outlined here:
+https://github.com/gruntwork-io/terragrunt/issues/580
+
 ### Configure AWS Access
 
 Ensure you have an aws profile configured that is named `datareply`.
