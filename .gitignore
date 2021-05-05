@@ -9,7 +9,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+cifar10*
 tmp
 # Crash log files
 crash.log
