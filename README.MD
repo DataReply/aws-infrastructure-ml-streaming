@@ -73,7 +73,16 @@ You need to run this, if you are planning to connect to the cluster via kubectl.
 
 ### Run sample cifar10 workload 
 Please review the  [the cifar10 workload](doc/workload.md) section.
-  
+
+### Inspect model performance
+The installed grafana dashboard provides an indication about the model perfomance,
+
+```
+kubectl port-forward svc/seldon-core-analytics-grafana 3000:80 -n seldon-system
+```
+
+Open localhost:3000 in your webbrowser to get an indication of model performance.
+
 ### bootstrap flux 
 This  only needs to be done *once by the cluster admin* in order to bootstrap flux on the cluster and connect the `app-configuration-layer-ml-streaming` with it.
 
