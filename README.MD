@@ -1,6 +1,10 @@
 # aws-infrastructure-ml-streaming
 
 This repository defines aws infrastructure required to operate the ml-streaming showcase.
+<p align="center" width="100%">
+        <img width="50%" src="https://github.com/DataReply/aws-infrastructure-ml-streaming/blob/master/doc/architecture.png"> 
+</p>
+
 
 ### Required tooling
 
