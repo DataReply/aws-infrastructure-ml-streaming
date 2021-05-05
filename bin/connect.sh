@@ -5,5 +5,5 @@ INSTANCE_ID=$(aws ec2 describe-instances --profile "datareply" --filters "Name=t
 aws ssm start-session --profile datareply  \
     --target $INSTANCE_ID  \
     --document-name AWS-StartPortForwardingSession \
-    --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}'
+    --parameters '{"portNumber":["6443"], "localPortNumber":["6443"]}'&
 k get nodes

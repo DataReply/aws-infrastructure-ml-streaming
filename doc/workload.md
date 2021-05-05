@@ -2,6 +2,8 @@
 pip install gsutil
 ```
 
+![cifar model lgtm](https://pytorch.org/tutorials/_images/cifar10.png "cifar")
+
 ```
 gsutil cp gs://seldon-datasets/cifar10/requests/tensorflow/cifar10_tensorflow.json.gz cifar10_tensorflow.json.gz
 gunzip cifar10_tensorflow.json.gz
