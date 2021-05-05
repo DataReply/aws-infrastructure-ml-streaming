@@ -5,9 +5,9 @@ verify_ssl = true
 
 [packages]
 confluent-kafka  = "*"
-#tensorflow-serving-api  = "*"
+tensorflow-serving-api  = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.7.2"

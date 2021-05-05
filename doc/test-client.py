@@ -2,8 +2,8 @@ from confluent_kafka import Producer, Consumer, KafkaError, KafkaException, Mess
 import socket
 import argparse
 import sys
-#from tensorflow_serving.apis import predict_pb2
-#from google.protobuf.json_format import MessageToJson
+from tensorflow_serving.apis import predict_pb2
+from google.protobuf.json_format import MessageToJson
 
 def main():
     parser = argparse.ArgumentParser()
