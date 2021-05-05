@@ -71,7 +71,9 @@ You need to run this, if you are planning to connect to the cluster via kubectl.
 3. Run `bash bin/extract_kafka_clientconfig.sh` which yields the kafka client config.
 
 
-
+### Run sample cifar10 workload 
+Please review the  [the cifar10 workload](doc/workload.md) section.
+  
 ### bootstrap flux 
 This  only needs to be done *once by the cluster admin* in order to bootstrap flux on the cluster and connect the `app-configuration-layer-ml-streaming` with it.
 
