@@ -10,8 +10,8 @@ This repository defines aws infrastructure required to operate the ml-streaming 
 ```bash
 brew tap gjbae1212/gossm
 brew install gossm terragrunt tfenv jq awscli fluxcd/tap/flux
-tfenv install 0.15.1
-tfenv use 0.15.1
+tfenv install 0.14.1
+tfenv use 0.14.1
 ```
 
 You might run into issues because both `terragrunt` and `tfenv` depend on terraform. Some solutions to this are outlined here:
@@ -52,13 +52,21 @@ This section explains which steps need to be done to run kubectl towards the clu
 #### One-time config
 You need to set this up once to get a local copy of the kubeconfig.
 
-1. Run the bundled `bash bootstrap.sh`
+1. Run the bundled `bash bin/bootstrap.sh`
 
 #### Connecting to the cluster
 You need to run this, if you are planning to connect to the cluster via kubectl.
 
-1. Run the bundled `bash connect.sh`
+1. Run the bundled `bash bin/connect.sh`
 2. Use kubectl as usual
+
+#### Connecting to kafka cluster
+
+1. Make sure to have initialized kubernetes connectivity
+2. Make sure you are connected to the cluster
+3. Run `bash bin/extract_kafka_clientconfig.sh` which yields the kafka client config.
+
+
 
 ### bootstrap flux 
 This  only needs to be done *once by the cluster admin* in order to bootstrap flux on the cluster and connect the `app-configuration-layer-ml-streaming` with it.
