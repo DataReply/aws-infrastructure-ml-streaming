@@ -24,7 +24,7 @@ gsutil cp gs://seldon-datasets/cifar10/requests/tensorflow/cifar10_tensorflow.pr
 Run the bootstrap_model script to ensure required variables set.
 
 ```
-bash ../bin/bootstrap_model.sh
+. ../bin/bootstrap_model.sh
 ```
 
 Make sure to use a compatible python version (compatible with the tensorflow lib [we use only helpers] )
