@@ -35,6 +35,6 @@ pipenv install
 
 First generate some data, then read the yielded prediction stream
 ```
-pipenv run python test-client.py produce $BOOTSTRAP_URL:KAFKA_PORT $SASL_PASSWORD cifar10-rest-input --file cifar10_tensorflow.json
+pipenv run python test-client.py produce $BOOTSTRAP_URL:$KAFKA_PORT $SASL_PASSWORD cifar10-rest-input --file cifar10_tensorflow.json
 pipenv run python test-client.py consume $BOOTSTRAP_URL:$KAFKA_PORT $SASL_PASSWORD cifar10-rest-output 
 ```
