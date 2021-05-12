@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir -p ./tmp
-export KUBECONFIG=$(PWD)/k3s.yaml
+export KUBECONFIG=$(PWD)/../k3s.yaml
 
 kubectl -n strimzi  get secrets  kafka-cluster-ca-cert -o json | jq -r '.data | map_values(@base64d) | ."ca.crt" ' > ./tmp/ca.crt
 
