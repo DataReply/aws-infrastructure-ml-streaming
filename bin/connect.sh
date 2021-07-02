@@ -1,7 +1,9 @@
 #!/bin/bash
-export KUBECONFIG=$(PWD)/k3s.yaml
+CLUSTER_NAME=${1:-k3s-cluster}
 
-INSTANCE_ID=$(aws ec2 describe-instances --profile "datareply" --filters "Name=tag:k3s-role,Values=master" | jq '.Reservations[0].Instances[0].InstanceId' -r)
+export KUBECONFIG=$(PWD)/$CLUSTER_NAME.yaml
+
+INSTANCE_ID=$(aws ec2 describe-instances --profile "datareply" --filters "Name=tag:Name,Values=$CLUSTER_NAME-master" | jq '.Reservations[0].Instances[0].InstanceId' -r)
 aws ssm start-session --profile datareply  \
     --target $INSTANCE_ID  \
     --document-name AWS-StartPortForwardingSession \

@@ -61,7 +61,7 @@ You need to set this up once to get a local copy of the kubeconfig.
 #### Connecting to the cluster
 You need to run this, if you are planning to connect to the cluster via kubectl.
 
-1. Run the bundled `bash bin/connect.sh`
+1. Run the bundled `bash bin/connect.sh` or `bash bin/connect.sh k3s-arm-cluster` 
 2. Use kubectl as usual
 
 #### Connecting to kafka cluster
