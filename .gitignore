@@ -39,4 +39,4 @@ override.tf.json
 
 # End of https://www.toptal.com/developers/gitignore/api/terraform,terragrunt
 
-k3s.yaml
+k3s*.yaml

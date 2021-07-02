@@ -56,6 +56,7 @@ This section explains which steps need to be done to run kubectl towards the clu
 You need to set this up once to get a local copy of the kubeconfig.
 
 1. Run the bundled `bash bin/bootstrap.sh`
+2. (optionaly) Run `bash bin/bootstrap.sh k3s-arm-cluster` to setup the arm cluster.
 
 #### Connecting to the cluster
 You need to run this, if you are planning to connect to the cluster via kubectl.
