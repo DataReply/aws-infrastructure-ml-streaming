@@ -68,7 +68,7 @@ You need to run this, if you are planning to connect to the cluster via kubectl.
 
 1. Make sure to have initialized kubernetes connectivity
 2. Make sure you are connected to the cluster
-3. Run `bash bin/extract_kafka_clientconfig.sh` which yields the kafka client config.
+3. Run `bash bin/extract_kafka_clientconfig.sh k3s-arm-cluster` which yields the kafka client config.
 
 
 ### Run sample cifar10 workload 
@@ -88,14 +88,23 @@ Login admin:password
 This  only needs to be done *once by the cluster admin* in order to bootstrap flux on the cluster and connect the `app-configuration-layer-ml-streaming` with it.
 
 ```
-export GITHUB_USER="TODO REPLACE BY TOKEN"
+export GITHUB_TOKEN="TODO REPLACE BY TOKEN"
+export GITHUB_USER="TODO REPLACE BY USER"
 flux bootstrap github \
     --owner=DataReply \
     --repository=app-configuration-layer-ml-streaming \
     --branch=master \
-    --kubeconfig k3s.yaml \
+    --kubeconfig k3s-cluster.yaml \
     --context=default \
     --path=clusters/dev
+
+flux bootstrap github \
+    --owner=DataReply \
+    --repository=app-configuration-layer-ml-streaming \
+    --branch=master \
+    --kubeconfig k3s-arm-cluster.yaml \
+    --context=default \
+    --path=clusters/dev-arm
 ```
 
 #### Tools/Frameworks planned to used
