@@ -12,6 +12,7 @@ data "aws_availability_zones" "all" {}
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
+  version = "3.6.0"
 
   name = var.cluster_id
   cidr = var.vpc_cidr
@@ -48,9 +49,9 @@ module "k3s-in-new-vpc" {
 
   # node instances
   master_instance_type = var.master_instance_type 
-  node_count           = 5
+  node_count           = 3
   node_instance_arch   = "x86_64"
-  node_instance_types  = ["t3a.small", "t3.small", "t3.medium", "t3a.medium", "t2.small" ]
+  node_instance_types  = ["t3.medium", "t3a.medium"]
   on_demand_percentage = 20  # all spot instances
 
   # # run on Arm architecture, where g == ARM-based graviton
